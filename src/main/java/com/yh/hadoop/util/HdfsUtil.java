@@ -1,4 +1,4 @@
-package com.yh.hadoop;
+package com.yh.hadoop.util;
 
 import java.io.InputStream;
 import java.net.URI;
@@ -10,7 +10,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
 
-public class Test {  
+public class HdfsUtil {  
     public static void main(String[] args) throws Exception {  
         String uri = "hdfs://appserver:9000/";  
         Configuration config = new Configuration();  

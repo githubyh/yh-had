@@ -1,4 +1,4 @@
-package com.yh.hadoop;
+package com.yh.hadoop.mapreduce;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-public class EventCount {  
+public class WordCount {  
    
     public static class MyMapper extends Mapper<Object, Text, Text, IntWritable>{  
         private final static IntWritable one = new IntWritable(1);  
@@ -51,7 +51,7 @@ public class EventCount {
             System.exit(2);  
         }  
         Job job = Job.getInstance(conf, "event count");  
-        job.setJarByClass(EventCount.class);  
+        job.setJarByClass(WordCount.class);  
         job.setMapperClass(MyMapper.class);  
         job.setCombinerClass(MyReducer.class);  
         job.setReducerClass(MyReducer.class);  
