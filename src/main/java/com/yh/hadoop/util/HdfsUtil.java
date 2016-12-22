@@ -13,10 +13,9 @@ import org.apache.hadoop.io.IOUtils;
 public class HdfsUtil {  
     public static void main(String[] args) throws Exception {  
         String uri = "hdfs://appserver:9000/";  
-        Configuration config = new Configuration(); 
-        
+        Configuration config = new Configuration();  
         FileSystem fs = FileSystem.get(URI.create(uri), config);  
-      
+   
         // 列出hdfs上/user/fkong/目录下的所有文件和目录  
         FileStatus[] statuses = fs.listStatus(new Path("/user"));  
         for (FileStatus status : statuses) {  
